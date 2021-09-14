@@ -26,39 +26,33 @@ public class MainActivity extends AppCompatActivity {
         editText_b = findViewById(R.id.edit_b);
         editText_c = findViewById(R.id.edit_c);
         editText_x = findViewById(R.id.edit_x);
+        resultView = findViewById(R.id.result);
         btn_solve = findViewById(R.id.solve_btn);
 
+    }
 
-        View.OnClickListener onClickListener = new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                double y,a, b ,c , x;
+    public void handleSolve(View view) {
+        double y, a, b, c, x;
 
+        try{
+            a = Double.parseDouble(editText_a.getText().toString().trim());
+            b = Double.parseDouble(editText_b.getText().toString().trim());
+            c = Double.parseDouble(editText_c.getText().toString().trim());
+            x = Double.parseDouble(editText_x.getText().toString().trim());
 
-
-                try{
-                    a = Double.parseDouble(editText_a.getText().toString().trim());
-                    b = Double.parseDouble(editText_b.getText().toString().trim());
-                    c = Double.parseDouble(editText_c.getText().toString().trim());
-                    x = Double.parseDouble(editText_x.getText().toString().trim());
-
-                    if(x < 4){
-                        y = ((Math.pow(x, 2) + Math.pow(a, 2)) * c) / (2 * b);
-                    }
-                    else{
-                        y = (Math.pow(x, 3)) * (a - b);
-                    }
-
-                    resultView.setText(String.valueOf(y));
-
-                }catch (Exception e){
-                    resultView.setText("Неверные входные данные");
-                }
-
+            if(x < 4){
+                y = ((Math.pow(x, 2) + Math.pow(a, 2)) * c) / (2 * b);
             }
-        };
+            else{
+                y = (Math.pow(x, 3)) * (a - b);
+            }
 
-        btn_solve.setOnClickListener(onClickListener);
+            resultView.setText(String.valueOf(y));
+            System.out.println(resultView.getText());
+
+        }catch (Exception e){
+            resultView.setText("Неверные входные данные");
+        }
 
     }
 }
