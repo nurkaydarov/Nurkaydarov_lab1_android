@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Nurkaydarov_lab1_android</string>
+    <string name="a_value">A = </string>
+    <string name="b_value">B = </string>
+    <string name="a_edit_hint">Введите A</string>
+    <string name="b_edit_hint">Введите B</string>
+    <string name="c_value">C =</string>
+    <string name="c_edit_hint">Введите С</string>
+
+    <string name="x_value">X =</string>
+    <string name="x_edit_hint">Введите X</string>
+    <string name="result_label">Результат</string>
+    <string name="solve_button">Решить</string>
+</resources>
